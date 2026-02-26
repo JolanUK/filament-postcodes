@@ -41,8 +41,7 @@
     },
     "autoload": {
         "psr-4": {
-            "jolanUK\\FilamentPostcodes\\": "src/",
-            "jolanUK\\FilamentPostcodes\\Database\\Factories\\": "database/factories/"
+            "jolanUK\\FilamentPostcodes\\": "src/"
         }
     },
     "autoload-dev": {
@@ -63,10 +62,7 @@
         "laravel": {
             "providers": [
                 "jolanUK\\FilamentPostcodes\\FilamentPostcodesServiceProvider"
-            ],
-            "aliases": {
-                "FilamentPostcodes": "jolanUK\\FilamentPostcodes\\Facades\\FilamentPostcodes"
-            }
+            ]
         }
     },
     "config": {
