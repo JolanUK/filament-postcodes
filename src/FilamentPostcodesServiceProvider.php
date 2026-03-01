@@ -2,8 +2,6 @@
 
 namespace jolanUK\FilamentPostcodes;
 
-use Filament\Support\Assets\Css;
-use Filament\Support\Facades\FilamentAsset;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -11,16 +9,21 @@ class FilamentPostcodesServiceProvider extends PackageServiceProvider
 {
     public static string $name = 'filament-postcodes';
 
+    public static string $viewNamespace = 'filament-postcodes';
+
     public function configurePackage(Package $package): void
     {
-        $package->name(static::$name)
-            ->hasViews();
-    }
+        $package->name(static::$name);
 
-    public function packageBooted(): void
-    {
-        FilamentAsset::register([
-            Css::make('postcodes', __DIR__ . '/../resources/dist/postcodes.css')->loadedOnRequest(),
-        ], 'jolanuk/filament-postcodes');
+        $configFileName = $package->shortName();
+
+        if (file_exists($package->basePath("/../config/$configFileName.php"))) {
+            $package->hasConfigFile();
+        }
+
+        if (file_exists($package->basePath('/../resources/lang'))) {
+            $package->hasTranslations();
+        }
+
     }
 }

@@ -1,6 +1,6 @@
 {
     "name": "jolanuk/filament-postcodes",
-    "description": "This is my package filament-postcodes",
+    "description": "A valid UK postcode generator for FilamentPHP.",
     "keywords": [
         "jolanUK",
         "laravel",
@@ -36,6 +36,9 @@
         "pestphp/pest-plugin-arch": "^3.0|^4.0",
         "pestphp/pest-plugin-laravel": "^3.0|^4.0",
         "pestphp/pest-plugin-livewire": "^3.0|^4.0",
+        "phpstan/extension-installer": "^1.1",
+        "phpstan/phpstan-deprecation-rules": "^2.0",
+        "phpstan/phpstan-phpunit": "^2.0",
         "rector/rector": "^2.0",
         "spatie/laravel-ray": "^1.26"
     },
