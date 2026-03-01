@@ -36,6 +36,10 @@
         "pestphp/pest-plugin-arch": "^3.0|^4.0",
         "pestphp/pest-plugin-laravel": "^3.0|^4.0",
         "pestphp/pest-plugin-livewire": "^3.0|^4.0",
+        "phpstan/phpstan": "^2.0",
+        "phpstan/phpstan-deprecation-rules": "^2.0",
+        "phpstan/phpstan-phpunit": "^2.0",
+        "phpunit/phpunit": "^12.5",
         "rector/rector": "^2.0",
         "spatie/laravel-ray": "^1.26"
     },
@@ -54,7 +58,7 @@
         "analyse": "phpstan analyse",
         "lint": "pint",
         "refactor": "rector",
-        "test": "pest",
+        "test": "pest --no-coverage",
         "test:lint": "pint --test",
         "test:refactor": "rector --dry-run"
     },

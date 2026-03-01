@@ -264,7 +264,7 @@ class PostcodeField extends TextInput
         $this->maxLength(8);
         $this->required();
         $this->rules(['required', 'min:6', 'max:8']);
-        $this->afterStateUpdated(function (Livewire $livewire, Component $component, Set $set) {
+        $this->afterStateUpdated(function (Livewire $livewire, Component $component, Set $set): void {
             $livewire->validateOnly($component->getStatePath());
             $this->getPostcode($livewire, $component, $set);
         });

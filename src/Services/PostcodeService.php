@@ -36,7 +36,7 @@ final class PostcodeService
 
             return self::formatResponseData($response);
 
-        } catch (ConnectionException $ignored) {
+        } catch (ConnectionException) {
             Notification::make()
                 ->warning()
                 ->title('Couldn\'t retrieve a postcode.')
