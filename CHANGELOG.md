@@ -2,6 +2,6 @@
 
 All notable changes to `filament-postcodes` will be documented in this file.
 
-## 1.0.0 - 202X-XX-XX
+## 5.0.0 - 01/03/2026
 
-- initial release
+- Initial implementation of the postcode text field, and handling the API call to postcodes.io.
