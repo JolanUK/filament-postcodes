@@ -2,59 +2,95 @@
 
 namespace JolanUK\FilamentPostcodes\Traits;
 
-use Filament\Schemas\Components\Component;
-use Filament\Schemas\Components\Utilities\Set;
-use Illuminate\Http\Client\ConnectionException;
 use Filament\Notifications\Notification;
+use Illuminate\Http\Client\ConnectionException;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Http;
-
-use Livewire\Component as Livewire;
 
 trait PostcodeTraits
 {
     private string $qualityField = 'quality';
+
     private string $eastingsField = 'eastings';
+
     private string $northingsField = 'northings';
+
     private string $countryField = 'country';
+
     private string $nhsHAField = 'nhs_ha';
+
     private string $longitudeField = 'longitude';
+
     private string $latitudeField = 'latitude';
+
     private string $europeanElectoralRegionField = 'european_electoral_region';
+
     private string $primaryCareTrustField = 'primary_care_trust';
+
     private string $regionField = 'region';
+
     private string $lsoaField = 'lsoa';
+
     private string $msoaField = 'msoa';
+
     private string $incodeField = 'incode';
+
     private string $outcodeField = 'outcode';
+
     private string $parliamentaryConstituencyField = 'parliamentary_constituency';
+
     private string $parliamentaryConstituency2024Field = 'parliamentary_constituency_2024';
+
     private string $adminDistrictField = 'admin_district';
+
     private string $parishField = 'parish';
+
     private string $adminCountyField = 'admin_county';
+
     private string $dateOfIntroductionField = 'date_of_introduction';
+
     private string $adminWardField = 'admin_ward';
+
     private string $cedField = 'ced';
+
     private string $ccgField = 'ccg';
+
     private string $nutsField = 'nuts';
+
     private string $pfaField = 'pfa';
+
     private string $nhsRegionField = 'nhs_region';
+
     private string $ttwaField = 'ttwa';
+
     private string $nationalParkField = 'national_park';
+
     private string $buaField = 'bua';
+
     private string $icbField = 'icb';
+
     private string $cancerAllianceField = 'cancer_alliance';
+
     private string $lsoa11Field = 'lsoa11';
+
     private string $msoa11Field = 'msoa11';
+
     private string $lsoa21Field = 'lsoa21';
+
     private string $msoa21Field = 'msoa21';
+
     private string $oa21Field = 'oa21';
+
     private string $ruc11Field = 'ruc11';
+
     private string $ruc21Field = 'ruc21';
+
     private string $lep1Field = 'lep1';
+
     private string $lep2Field = 'lep2';
 
-    protected function setUp(): void {
+    protected function setUp(): void
+    {
         parent::setUp();
 
         $this->live();
@@ -145,167 +181,167 @@ trait PostcodeTraits
 
     public function castPostcodeFields($postcodeResponse, $set): void
     {
-        if(!empty($postcodeResponse)) {
+        if (! empty($postcodeResponse)) {
             parent::belowContent('Postcode lookup successful. Please check the \'Geography\' tab for further information.');
         }
 
-        if (!empty($postcodeResponse['quality'])) {
+        if (! empty($postcodeResponse['quality'])) {
             $set($this->qualityField, $postcodeResponse['quality']);
         }
 
-        if (!empty($postcodeResponse['eastings'])) {
+        if (! empty($postcodeResponse['eastings'])) {
             $set($this->eastingsField, $postcodeResponse['eastings']);
         }
 
-        if (!empty($postcodeResponse['northings'])) {
+        if (! empty($postcodeResponse['northings'])) {
             $set($this->northingsField, $postcodeResponse['northings']);
         }
 
-        if (!empty($postcodeResponse['country'])) {
+        if (! empty($postcodeResponse['country'])) {
             $set($this->countryField, $postcodeResponse['country']);
         }
 
-        if (!empty($postcodeResponse['nhs_ha'])) {
+        if (! empty($postcodeResponse['nhs_ha'])) {
             $set($this->nhsHAField, $postcodeResponse['nhs_ha']);
         }
 
-        if (!empty($postcodeResponse['longitude'])) {
+        if (! empty($postcodeResponse['longitude'])) {
             $set($this->longitudeField, $postcodeResponse['longitude']);
         }
 
-        if (!empty($postcodeResponse['latitude'])) {
+        if (! empty($postcodeResponse['latitude'])) {
             $set($this->latitudeField, $postcodeResponse['latitude']);
         }
 
-        if (!empty($postcodeResponse['european_electoral_region'])) {
+        if (! empty($postcodeResponse['european_electoral_region'])) {
             $set($this->europeanElectoralRegionField, $postcodeResponse['european_electoral_region']);
         }
 
-        if (!empty($postcodeResponse['primary_care_trust'])) {
+        if (! empty($postcodeResponse['primary_care_trust'])) {
             $set($this->primaryCareTrustField, $postcodeResponse['primary_care_trust']);
         }
 
-        if (!empty($postcodeResponse['region'])) {
+        if (! empty($postcodeResponse['region'])) {
             $set($this->regionField, $postcodeResponse['region']);
         }
 
-        if (!empty($postcodeResponse['lsoa'])) {
+        if (! empty($postcodeResponse['lsoa'])) {
             $set($this->lsoaField, $postcodeResponse['lsoa']);
         }
 
-        if (!empty($postcodeResponse['msoa'])) {
+        if (! empty($postcodeResponse['msoa'])) {
             $set($this->msoaField, $postcodeResponse['msoa']);
         }
 
-        if (!empty($postcodeResponse['incode'])) {
+        if (! empty($postcodeResponse['incode'])) {
             $set($this->incodeField, $postcodeResponse['incode']);
         }
 
-        if (!empty($postcodeResponse['outcode'])) {
+        if (! empty($postcodeResponse['outcode'])) {
             $set($this->outcodeField, $postcodeResponse['outcode']);
         }
 
-        if (!empty($postcodeResponse['parliamentary_constituency'])) {
+        if (! empty($postcodeResponse['parliamentary_constituency'])) {
             $set($this->parliamentaryConstituencyField, $postcodeResponse['parliamentary_constituency']);
         }
 
-        if (!empty($postcodeResponse['parliamentary_constituency_2024'])) {
+        if (! empty($postcodeResponse['parliamentary_constituency_2024'])) {
             $set($this->parliamentaryConstituency2024Field, $postcodeResponse['parliamentary_constituency_2024']);
         }
 
-        if (!empty($postcodeResponse['admin_district'])) {
+        if (! empty($postcodeResponse['admin_district'])) {
             $set($this->adminDistrictField, $postcodeResponse['admin_district']);
         }
 
-        if (!empty($postcodeResponse['parish'])) {
+        if (! empty($postcodeResponse['parish'])) {
             $set($this->parishField, $postcodeResponse['parish']);
         }
 
-        if (!empty($postcodeResponse['admin_county'])) {
+        if (! empty($postcodeResponse['admin_county'])) {
             $set($this->adminCountyField, $postcodeResponse['admin_county']);
         }
 
-        if (!empty($postcodeResponse['date_of_introduction'])) {
+        if (! empty($postcodeResponse['date_of_introduction'])) {
             $set($this->dateOfIntroductionField, $postcodeResponse['date_of_introduction']);
         }
 
-        if (!empty($postcodeResponse['admin_ward'])) {
+        if (! empty($postcodeResponse['admin_ward'])) {
             $set($this->adminWardField, $postcodeResponse['admin_ward']);
         }
 
-        if (!empty($postcodeResponse['ced'])) {
+        if (! empty($postcodeResponse['ced'])) {
             $set($this->cedField, $postcodeResponse['ced']);
         }
 
-        if (!empty($postcodeResponse['ccg'])) {
+        if (! empty($postcodeResponse['ccg'])) {
             $set($this->ccgField, $postcodeResponse['ccg']);
         }
 
-        if (!empty($postcodeResponse['nuts'])) {
+        if (! empty($postcodeResponse['nuts'])) {
             $set($this->nutsField, $postcodeResponse['nuts']);
         }
 
-        if (!empty($postcodeResponse['pfa'])) {
+        if (! empty($postcodeResponse['pfa'])) {
             $set($this->pfaField, $postcodeResponse['pfa']);
         }
 
-        if (!empty($postcodeResponse['nhs_region'])) {
+        if (! empty($postcodeResponse['nhs_region'])) {
             $set($this->nhsRegionField, $postcodeResponse['nhs_region']);
         }
 
-        if (!empty($postcodeResponse['ttwa'])) {
+        if (! empty($postcodeResponse['ttwa'])) {
             $set($this->ttwaField, $postcodeResponse['ttwa']);
         }
 
-        if (!empty($postcodeResponse['national_park'])) {
+        if (! empty($postcodeResponse['national_park'])) {
             $set($this->nationalParkField, $postcodeResponse['national_park']);
         }
 
-        if (!empty($postcodeResponse['bua'])) {
+        if (! empty($postcodeResponse['bua'])) {
             $set($this->buaField, $postcodeResponse['bua']);
         }
 
-        if (!empty($postcodeResponse['icb'])) {
+        if (! empty($postcodeResponse['icb'])) {
             $set($this->icbField, $postcodeResponse['icb']);
         }
 
-        if (!empty($postcodeResponse['cancer_alliance'])) {
+        if (! empty($postcodeResponse['cancer_alliance'])) {
             $set($this->cancerAllianceField, $postcodeResponse['cancer_alliance']);
         }
 
-        if (!empty($postcodeResponse['lsoa11'])) {
+        if (! empty($postcodeResponse['lsoa11'])) {
             $set($this->lsoa11Field, $postcodeResponse['lsoa11']);
         }
 
-        if (!empty($postcodeResponse['msoa11'])) {
+        if (! empty($postcodeResponse['msoa11'])) {
             $set($this->msoa11Field, $postcodeResponse['msoa11']);
         }
 
-        if (!empty($postcodeResponse['lsoa21'])) {
+        if (! empty($postcodeResponse['lsoa21'])) {
             $set($this->lsoa21Field, $postcodeResponse['lsoa21']);
         }
 
-        if (!empty($postcodeResponse['msoa21'])) {
+        if (! empty($postcodeResponse['msoa21'])) {
             $set($this->msoa21Field, $postcodeResponse['msoa21']);
         }
 
-        if (!empty($postcodeResponse['oa21'])) {
+        if (! empty($postcodeResponse['oa21'])) {
             $set($this->oa21Field, $postcodeResponse['oa21']);
         }
 
-        if (!empty($postcodeResponse['ruc11'])) {
+        if (! empty($postcodeResponse['ruc11'])) {
             $set($this->ruc11Field, $postcodeResponse['ruc11']);
         }
 
-        if (!empty($postcodeResponse['ruc21'])) {
+        if (! empty($postcodeResponse['ruc21'])) {
             $set($this->ruc21Field, $postcodeResponse['ruc21']);
         }
 
-        if (!empty($postcodeResponse['lep1'])) {
+        if (! empty($postcodeResponse['lep1'])) {
             $set($this->lep1Field, $postcodeResponse['lep1']);
         }
 
-        if (!empty($postcodeResponse['lep2'])) {
+        if (! empty($postcodeResponse['lep2'])) {
             $set($this->lep2Field, $postcodeResponse['lep2']);
         }
     }

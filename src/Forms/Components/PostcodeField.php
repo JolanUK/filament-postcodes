@@ -6,14 +6,14 @@ use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Component;
 use Filament\Schemas\Components\Utilities\Set;
 use JolanUK\FilamentPostcodes\Traits\PostcodeTraits;
-
 use Livewire\Component as Livewire;
 
 class PostcodeField extends TextInput
 {
     use PostcodeTraits;
 
-    protected function setUp(): void {
+    protected function setUp(): void
+    {
         parent::setUp();
 
         $this->live();
